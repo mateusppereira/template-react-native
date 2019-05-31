@@ -22,7 +22,7 @@ ContainerElement.defaultProps = {
   width: '100%',
   height: '100%',
   padding: 10,
-  bgColor: theme.primary,
+  bgColor: theme.white,
   jc: 'flex-start',
   ai: 'stretch',
 }

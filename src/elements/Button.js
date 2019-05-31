@@ -1,6 +1,7 @@
 import React from 'react';
-import theme from '../theme';
+import { ActivityIndicator } from 'react-native';
 import styled from 'styled-components';
+import theme from '../theme';
 
 const Button = styled.TouchableOpacity`
   width: ${props => props.width};
@@ -15,7 +16,9 @@ const Button = styled.TouchableOpacity`
 
 const ButtonElement = (props) => (
   <Button {...props} onPress={props.onPress}>
-    {props.children}
+    {props.loading
+    ? <ActivityIndicator />
+    : props.children }
   </Button>
 );
 
