@@ -1,12 +1,9 @@
-import React from "react"
-import { Image } from "react-native"
-import { createStackNavigator, createAppContainer, createBottomTabNavigator } from "react-navigation";
-import Login from "./pages/Login"
-import SignUp from "./pages/SignUp"
-import Home from "./pages/Home"
-import Tests from "./pages/Tests"
-import Profile from "./pages/Profile"
-import { Img } from "./elements"
+import React from "react";
+import { createAppContainer, createBottomTabNavigator, createStackNavigator } from "react-navigation";
+import { Img } from "./elements";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
 import theme from "./theme";
 
 const PrivateRoutes = createBottomTabNavigator(
@@ -25,28 +22,30 @@ const PrivateRoutes = createBottomTabNavigator(
         )
       })
     },
-    Tests: {
-      screen: Tests,
+    Home2: {
+      screen: Home,
       navigationOptions: ({ navigation }) => ({
-        title: 'Provas',
+        title: 'Inicio2',
+        header: null,
         tabBarIcon: () => (
           <Img
             height={20}
             width={20}
-            source={require('./assets/clipboard.png')}
+            source={require('./assets/home.png')}
           />
         )
       })
     },
-    Profile: {
-      screen: Profile,
+    Home3: {
+      screen: Home,
       navigationOptions: ({ navigation }) => ({
-        title: 'Perfil',
+        title: 'Inicio3',
+        header: null,
         tabBarIcon: () => (
           <Img
             height={20}
             width={20}
-            source={require('./assets/user.png')}
+            source={require('./assets/home.png')}
           />
         )
       })
@@ -55,7 +54,7 @@ const PrivateRoutes = createBottomTabNavigator(
   {
     initialRouteName: 'Home',
     tabBarOptions: {
-      activeTintColor: theme.primary,
+      activeTintColor: theme.black,
       inactiveTintColor: theme.gray,
     },
   }
